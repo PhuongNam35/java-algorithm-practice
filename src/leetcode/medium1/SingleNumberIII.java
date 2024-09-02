@@ -1,6 +1,5 @@
-package leetcode.medium;
+package leetcode.medium1;
 
-import java.sql.Array;
 import java.util.*;
 
 public class SingleNumberIII {

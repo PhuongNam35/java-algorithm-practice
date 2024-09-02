@@ -1,4 +1,4 @@
-package leetcode.medium;
+package leetcode.medium1;
 
 public class CountTriplets {
     public static void main(String[] args) {

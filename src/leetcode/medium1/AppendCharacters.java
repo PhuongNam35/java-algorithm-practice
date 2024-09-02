@@ -1,4 +1,4 @@
-package leetcode.medium;
+package leetcode.medium1;
 
 public class AppendCharacters {
     public static void main(String[] args) {
