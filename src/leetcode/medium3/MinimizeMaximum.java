@@ -1,6 +1,9 @@
+package leetcode.medium3;
+
 public class MinimizeMaximum {
     public static void main(String[] args) {
-
+        MinimizeMaximum ans = new MinimizeMaximum();
+        System.out.println(ans.minimizeMaximum(6, new int[] {11,6}));
     }
 
     public int minimizeMaximum(int n, int[] quantities) {
@@ -19,6 +22,6 @@ public class MinimizeMaximum {
         int total = 0;
         for(int quantity : quantities)
             total += (quantity + val - 1)/val;
-        return total > n ? false : true;
+        return total <= n;
     }
 }

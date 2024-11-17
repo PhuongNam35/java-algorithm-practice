@@ -1,27 +1,32 @@
 package leetcode.easy1;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeSet;
 
 public class ArrayRankTransform {
     public static void main(String[] args) {
         ArrayRankTransform ans = new ArrayRankTransform();
-        System.out.println(Arrays.toString(ans.arrayRankTransform(new int[] {40,10,20,30})));
+        System.out.println(Arrays.toString(ans.arrayRankTransform(new int[]{40, 10, 20, 20, 20, 30})));
     }
 
     public int[] arrayRankTransform(int[] arr) {
-        arr = Arrays.stream(arr).sorted().toArray();
-        int[] ans = new int[arr.length];
-        int j = 1;
-        for(int i = 0; i < arr.length; i++){
-            if (i == 0) {
-                ans[i] = j;
-            }
-            else if(arr[i] == arr[i-1])
-                ans[i] = j;
-            else
-                ans[i] = ++j;
+        TreeSet<Integer> tempContain = new TreeSet<>();
+        for (int num : arr)
+            tempContain.add(num);
+
+        Map<Integer, Integer> countContain = new HashMap<>();
+        int cnt = 1;
+        for (int num : tempContain)
+            countContain.put(num, cnt++);
+
+        int n = arr.length;
+        int ans[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            ans[i] = countContain.get(arr[i]);
         }
+
         return ans;
     }
 }
